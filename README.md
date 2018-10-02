@@ -5,7 +5,9 @@ Wraper pour l'API revital assurance et social assur
 ## How to use: 
 ``
 require_once('_api.php');
+
 $api = new RetitalWrapper(array('key' => $key, 'url' => 'https://revital.adsolue.com/api'));
+
 $api->createProspect($supplier_id, $assurance_type = 'auto', $data, $utm_campaign);
 ``
 
