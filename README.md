@@ -22,4 +22,4 @@ If you have no key, or the key is wrong or disable you will get :
 
 If one of the field "firstname", "lastname", "tel" or "email" is missing in the $data array, your will get : "error"
 
-Else, you will have "success", that means we create the prospect on our side.
+Else, you will have "ok", that means we create the prospect on our side.
