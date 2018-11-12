@@ -32,13 +32,14 @@ class RetitalWrapper {
         return $this->call('/');
     }
 
-    public function createProspect($utm_source, $type, $datas, $utm_campaign = '')
+    public function createProspect($utm_source = '', $type = 'auto', $datas = array(), $utm_campaign = '', $group = '1')
     {
         $post['ip'] = $_SERVER['REMOTE_ADDR'];
         $post['origin'] = $_SERVER['SERVER_NAME'];
         $post['utm_source'] = $utm_source;
         $post['utm_campaign'] = $utm_campaign;
         $post['type'] = $type;
+        $post['group'] = $group;
         $post['form_datas'] = json_encode($datas);
 
         return $this->call('/prospect/new', $post);
@@ -53,8 +54,8 @@ class RetitalWrapper {
         curl_setopt($ch, CURLOPT_REFERER, $_SERVER['REQUEST_URI']);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-
-        /*curl_setopt($ch, CURLOPT_VERBOSE, true);
+/*
+        curl_setopt($ch, CURLOPT_VERBOSE, true);
         $verbose = fopen('php://temp', 'w+');
         curl_setopt($ch, CURLOPT_STDERR, $verbose);*/
 

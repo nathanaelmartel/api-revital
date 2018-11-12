@@ -6,7 +6,7 @@ Wraper pour l'API revital assurance et social assur
 ```php
 require_once('_api.php');
 $api = new RetitalWrapper(array('key' => $key, 'url' => 'https://revital.adsolue.com/api'));
-$api->createProspect($supplier_id, $assurance_type = 'auto', $data, $utm_campaign);
+$api->createProspect($supplier_id, $assurance_type = 'auto', $data = array(), $utm_campaign = '', $group = 1);
 ```
 
 * $supplier_id is the utm_source used to identify the supplier
@@ -14,6 +14,7 @@ $api->createProspect($supplier_id, $assurance_type = 'auto', $data, $utm_campaig
 * $data is an array containing all user informations fields
 * $data **need** to contain those keys: 'firstname', 'lastname', 'tel' and 'email'
 * $utm_campaign is optionnal
+* $group the id of the group who will receive the lead.
 
 ## Response
 
