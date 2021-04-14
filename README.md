@@ -16,6 +16,17 @@ $api->createProspect($utm_source, $assurance_type = 'auto', $data = array(), $ut
 * $utm_campaign is optionnal
 * $group is optionnal the id of the group who will receive the lead.
 
+## Response
+
+If you have no key, or the key is wrong or disable you will get :
+"error 401: Unauthorized, you need to set an authorization key" with a 401 http header
+
+If one of the field "firstname", "lastname", "tel" or "email" is missing in the $data array, your will get : "error"
+
+Else, you will have "ok", that means we create the prospect on our side.
+
+
+## With Curl
 ```
 curl --location --request post 'https://revital.adsolue.com/api/prospect/new' \
 --header 'authorization: bearer [api_key]' \
@@ -35,12 +46,3 @@ curl --location --request post 'https://revital.adsolue.com/api/prospect/new' \
     }
 }
 ```
-
-## Response
-
-If you have no key, or the key is wrong or disable you will get :
-"error 401: Unauthorized, you need to set an authorization key" with a 401 http header
-
-If one of the field "firstname", "lastname", "tel" or "email" is missing in the $data array, your will get : "error"
-
-Else, you will have "ok", that means we create the prospect on our side.
