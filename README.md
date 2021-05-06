@@ -1,5 +1,5 @@
 # api-revital
-Wraper pour l'API revital assurance et social assur
+Wraper pour l'API Revital Assurance et Social Assur
 
 
 ## How to use: 
@@ -21,9 +21,9 @@ $api->createProspect($utm_source, $assurance_type = 'auto', $data = array(), $ut
 If you have no key, or the key is wrong or disable you will get :
 "error 401: Unauthorized, you need to set an authorization key" with a 401 http header
 
-If one of the field "firstname", "lastname", "tel" or "email" is missing in the $data array, your will get : "error"
+If one of the field "firstname", "lastname", "tel" or "email" is missing in the $data array, your will get : **"Bad Request" ** with 400 http header and somme details in json
 
-Else, you will have "ok", that means we create the prospect on our side.
+Else, you will have **"Created"** with 201 http header, that means we create the prospect on our side.
 
 
 ## With Curl
@@ -43,6 +43,11 @@ curl --location --request post 'https://revital.adsolue.com/api/prospect/new' \
         "lastname": "test43",
         "tel": "0625010101",
         "email": "test@test.com",
+        "notes":[
+          {"title":"appel","date":"2021-04-30 16:54:33","content":"lorem"},
+          {"title":"appel","date":"2021-04-30 18:54:33","content":"ipsum"}
+        ],
+        "audio":"https://exemple.com/audio.wav",
     }
-}
+}'
 ```
