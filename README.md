@@ -20,8 +20,6 @@ $api->createProspect($utm_source, $assurance_type = 'auto', $data = array(), $ut
 
 If you have no key, or the key is wrong or disable you will get : `401 Unauthorized`
 
-If one of the field "firstname", "lastname", "tel" or "email" is missing in the $data array, your will get : `400 Bad Request` and somme details in json
-
 Else, you will have `201 Created`, that means we create the prospect on our side.
 
 
