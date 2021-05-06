@@ -18,12 +18,11 @@ $api->createProspect($utm_source, $assurance_type = 'auto', $data = array(), $ut
 
 ## Response
 
-If you have no key, or the key is wrong or disable you will get :
-"error 401: Unauthorized, you need to set an authorization key" with a 401 http header
+If you have no key, or the key is wrong or disable you will get : `401 Unauthorized`
 
-If one of the field "firstname", "lastname", "tel" or "email" is missing in the $data array, your will get : **"Bad Request" ** with 400 http header and somme details in json
+If one of the field "firstname", "lastname", "tel" or "email" is missing in the $data array, your will get : `400 Bad Request` and somme details in json
 
-Else, you will have **"Created"** with 201 http header, that means we create the prospect on our side.
+Else, you will have `201 Created`, that means we create the prospect on our side.
 
 
 ## With Curl
