@@ -5,7 +5,7 @@ Wraper pour l'API Revital Assurance et Social Assur
 ## How to use: 
 ```php
 require_once('_api.php');
-$api = new RetitalWrapper(array('key' => $key, 'url' => 'https://revital.adsolue.com/api'));
+$api = new RetitalWrapper(array('key' => $key, 'url' => 'https://revital-gestion.com/api'));
 $api->createProspect($utm_source, $assurance_type = 'auto', $data = array(), $utm_campaign = '', $group = 1);
 ```
 
@@ -25,7 +25,7 @@ Else, you will have `201 Created`, that means we create the prospect on our side
 
 ## With Curl
 ```
-curl --location --request post 'https://revital.adsolue.com/api/prospect/new' \
+curl --location --request post 'https://revital-gestion.com/api/prospect/new' \
 --header 'authorization: bearer [api_key]' \
 --header 'content-type: application/json' \
 --data-raw '{

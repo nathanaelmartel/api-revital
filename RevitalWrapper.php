@@ -21,7 +21,7 @@ class RetitalWrapper {
         if (isset($params['key'])) {
             $this->key = $params['key'];
         }
-        $this->url = 'https://revital.adsolue.com/api';
+        $this->url = 'https://revital-gestion.com/api';
         if (isset($params['url'])) {
             $this->url = $params['url'];
         }
