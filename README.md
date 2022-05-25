@@ -5,8 +5,18 @@ Wraper pour l'API Revital Assurance et Social Assur
 ## How to use: 
 ```php
 require_once('_api.php');
-$api = new RetitalWrapper(array('key' => $key, 'url' => 'https://revital-gestion.com/api'));
-$api->createProspect($utm_source, $assurance_type = '1', $data = array(), $utm_campaign = '', $group = 1);
+$data = [
+    "firstname" => "test43",
+    "lastname" => "test43",
+    "tel" => "0625010101",
+    "email" => "test@test.com",
+    /* ... */
+];
+$api = new retitalwrapper([
+    'key' => '[api_key]',
+    'url' => 'https://revital-gestion.com/api'
+]);
+$api->createProspect($utm_source, $assurance_type = '1', $data, $utm_campaign = '', $group = 1);
 ```
 
 * $utm_source is required
